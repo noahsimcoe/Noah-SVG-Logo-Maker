@@ -1,7 +1,6 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const MaxLengthInputPrompt = require("inquirer-maxlength-input-prompt");
-const Shapes = require ("./lib/shapes")
 const Square = require ("./lib/square")
 const Circle = require ("./lib/circle")
 const Triangle = require ("./lib/triangle")
@@ -35,9 +34,16 @@ const questions = () => inquirer.prompt([
     },
 ])
 .then((res) => {
-    const shape1 = new Square(res.text, res.textColor, res.shape, res.shapeColor);
-    shape1.printData();
-    shape1.render();
+    if (res.shape === "square") {
+        const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
+        square.render();
+    } else if (res.shape === "circle") {
+        const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);
+        circle.render();
+    } else {
+        const triangle = new Triangle(res.text, res.textColor, res.shape, res.shapeColor);
+        triangle.render();
+    }
 })
 
 questions();

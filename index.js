@@ -37,13 +37,15 @@ const questions = () => inquirer.prompt([
     if (res.shape === "square") {
         const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
         fs.writeFileSync("./examples/square.svg", square.renderShape(res));
-        console.log("Success! The Square.svg file has been written");
+        console.log("Success! Your Square.svg file has been written");
     } else if (res.shape === "circle") {
         const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);
-        circle.render();
+        fs.writeFileSync("./examples/circle.svg", circle.renderShape(res));
+        console.log("Success! Your circle.svg file has been written");
     } else {
         const triangle = new Triangle(res.text, res.textColor, res.shape, res.shapeColor);
-        triangle.render();
+        fs.writeFileSync("./examples/triangle.svg", triangle.renderShape(res));
+        console.log("Success! Your triangle.svg file has been written");
     }
 })
 

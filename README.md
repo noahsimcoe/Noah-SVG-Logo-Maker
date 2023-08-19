@@ -13,4 +13,7 @@ This project is NOT deployed on GitHub Pages, but installation and usage of the 
 This project is used to create a personal generated SVG file. Upon invoking the application, a user can go through a list of several command-line prompts in order to specify the chracteristics that they would like their SVG file to have. The user can choose between three shapes, five colors for the shape, and up to three chracters of text to be displayed on top of the shape. They also have the ability to choose a color for the overlaying text. Once everything is submitted, the user's input will be used to generate one 300x200px SVG file, which will be written as "logo.svg" and can be viewed in the browser.
 
 ## Video Submission
+https://drive.google.com/file/d/1XzkXOoJFWGUiDo2HsgjLWYzBn2eV4gyj/view
+
+
 

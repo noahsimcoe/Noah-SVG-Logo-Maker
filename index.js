@@ -17,7 +17,7 @@ const questions = () => inquirer.prompt([
     {
         name: "textColor",
         type: "list",
-        message: "Please choose a color",
+        message: "Please choose a text color",
         choices: ["red", "yellow", "green", "blue", "white"]
     },
     {
@@ -29,14 +29,14 @@ const questions = () => inquirer.prompt([
     {
         name: "shapeColor",
         type: "list",
-        message: "Please choose a color",
+        message: "Please choose a shape color",
         choices: ["red", "yellow", "green", "blue", "white"]
     },
 ])
 .then((res) => {
     if (res.shape === "square") {
         const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("square.svg", square.renderShape(res));
+        fs.writeFileSync("./examples/square.svg", square.renderShape(res));
         console.log("Success! The Square.svg file has been written");
     } else if (res.shape === "circle") {
         const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);

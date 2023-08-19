@@ -2,5 +2,5 @@
             height="300" width="200"
             xmlns="http://www.w3.org/2000/svg">
             <circle fill="yellow" cx="100" cy="150" r="100"/>
-            <text x="100" y="150" fill="blue" font-size="50" text-anchor="middle" alignment-baseline="central">NTS</text>
+            <text x="100" y="150" fill="green" font-size="50" text-anchor="middle" alignment-baseline="central">NTS</text>
         </svg>

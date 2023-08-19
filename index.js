@@ -36,15 +36,15 @@ const questions = () => inquirer.prompt([
 .then((res) => {
     if (res.shape === "square") {
         const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", square.renderShape(res));
+        fs.writeFileSync("logo.svg", square.render(res));
 
     } else if (res.shape === "circle") {
         const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", circle.renderShape(res));
+        fs.writeFileSync("logo.svg", circle.render(res));
 
     } else {
         const triangle = new Triangle(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", triangle.renderShape(res));
+        fs.writeFileSync("logo.svg", triangle.render(res));
 
     } console.log("Generated logo.svg");
 })

@@ -36,7 +36,8 @@ const questions = () => inquirer.prompt([
 .then((res) => {
     if (res.shape === "square") {
         const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
-        square.render();
+        fs.writeFileSync("square.svg", square.renderShape(res));
+        console.log("Success! The Square.svg file has been written");
     } else if (res.shape === "circle") {
         const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);
         circle.render();

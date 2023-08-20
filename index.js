@@ -18,7 +18,7 @@ const questions = () => inquirer.prompt([
         name: "textColor",
         type: "list",
         message: "Please choose a text color",
-        choices: ["red", "yellow", "green", "blue", "white"]
+        choices: ["red", "purple", "green", "blue", "white"]
     },
     {
         name: "shape",
@@ -30,7 +30,7 @@ const questions = () => inquirer.prompt([
         name: "shapeColor",
         type: "list",
         message: "Please choose a shape color",
-        choices: ["red", "yellow", "green", "blue", "white"]
+        choices: ["red", "pink", "orange", "blue", "white"]
     },
 ])
 .then((res) => {

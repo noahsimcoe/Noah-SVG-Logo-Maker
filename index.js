@@ -33,20 +33,17 @@ const questions = () => inquirer.prompt([
         choices: ["red", "pink", "orange", "blue", "white"]
     },
 ])
-.then((res) => {
-    if (res.shape === "square") {
-        const square = new Square(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", square.render(res));
-
-    } else if (res.shape === "circle") {
-        const circle = new Circle(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", circle.render(res));
-
+.then(( { text, textColor, shape, shapeColor} ) => {
+    let generatedShape;
+    if (shape === "square") {
+        generatedShape = new Square(text, textColor, shape, shapeColor);
+    } else if (shape === "circle") {
+        generatedShape = new Circle(text, textColor, shape, shapeColor);
     } else {
-        const triangle = new Triangle(res.text, res.textColor, res.shape, res.shapeColor);
-        fs.writeFileSync("logo.svg", triangle.render(res));
-
-    } console.log("Generated logo.svg");
+        generatedShape = new Triangle(text, textColor, shape, shapeColor);
+    }
+    fs.writeFileSync("logo.svg", generatedShape.render());
+    console.log("Generated logo.svg");
 })
 
 questions();
